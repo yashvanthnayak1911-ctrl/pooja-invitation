@@ -1,0 +1,395 @@
+:root {
+    --bg-color: #1a1a2e;
+    --page-color: #f8f5f0;
+    --text-main: #2d3142;
+    --text-accent: #c49a45;
+    --cover-color: #0f3460;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: radial-gradient(circle at center, #16213e 0%, var(--bg-color) 100%);
+    font-family: var(--font-body);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: var(--text-main);
+}
+
+.scene {
+    width: 90vw;
+    height: 80vh;
+    max-width: 900px;
+    max-height: 600px;
+    perspective: 2000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book {
+    position: relative;
+    width: 60%;
+    /* Wider single page */
+    max-width: 500px;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transform: translateX(0);
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.8s ease-in-out;
+    border-radius: 5px 15px 15px 5px;
+    box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.05),
+        0 0 15px rgba(196, 154, 69, 0.6),
+        0 0 35px rgba(196, 154, 69, 0.3);
+    /* Beautiful golden glow on all sides */
+}
+
+.base-page {
+    background-color: var(--page-color);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 8%);
+    box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.05),
+        0 0 15px rgba(196, 154, 69, 0.6),
+        0 0 35px rgba(196, 154, 69, 0.3),
+        10px 10px 30px rgba(0, 0, 0, 0.5);
+    /* Glow + Depth */
+}
+
+.cover-page {
+    box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.05),
+        0 0 15px rgba(196, 154, 69, 0.6),
+        0 0 35px rgba(196, 154, 69, 0.3),
+        10px 10px 30px rgba(0, 0, 0, 0.5);
+    /* Glow + Depth */
+}
+
+.page.flipped {
+    transform: rotateY(-180deg);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.page.flipped.cover-page {
+    box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.05),
+        0 0 15px rgba(196, 154, 69, 0.6),
+        0 0 35px rgba(196, 154, 69, 0.3),
+        -10px 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    border-radius: 5px 15px 15px 5px;
+    background-color: var(--page-color);
+    overflow: hidden;
+}
+
+.front {
+    background-color: var(--cover-color);
+    color: var(--page-color);
+    transform: rotateY(0deg);
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 15%),
+        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.1'/%3E%3C/svg%3E");
+}
+
+.front {
+    background-color: var(--cover-color);
+    color: var(--page-color);
+    transform: rotateY(0deg);
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 15%),
+        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.1'/%3E%3C/svg%3E");
+}
+
+/* Base Content Styling */
+.content {
+    padding: 40px 40px 40px 60px;
+    /* Default: extra padding on left for spine */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    /* Layering the notebook lines over a beautiful subtle background pattern */
+    background-image:
+        repeating-linear-gradient(transparent 0, transparent 29px, rgba(0, 0, 0, 0.05) 30px),
+        url('inner-bg.png');
+    background-size: 100% 30px, 400px;
+    /* Notebook lines, then pattern size */
+    background-position: 0 10px, center;
+    background-blend-mode: overlay;
+    /* Blend them nicely */
+}
+
+.front .content {
+    background-image: none;
+    align-items: center;
+    text-align: center;
+    padding: 40px 60px 40px 60px;
+    /* Equal padding or extra on left */
+}
+
+/* Typography */
+h1,
+h2 {
+    font-family: var(--font-heading);
+    color: var(--text-accent);
+    position: relative;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    color: var(--text-main);
+}
+
+.cover-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.front-cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+}
+
+.front h1 {
+    color: var(--page-color);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 0px 0px 30px rgba(0, 0, 0, 0.5);
+    /* Stronger shadow behind header text */
+}
+
+.subtitle {
+    color: var(--page-color);
+    font-weight: 500;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    /* Added shadow behind subtitle text */
+    font-style: italic;
+    opacity: 0.8;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 10;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.details {
+    background: rgba(0, 0, 0, 0.03);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.details p {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.message {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: auto;
+    color: var(--text-accent);
+}
+
+.event-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+button {
+    background-color: transparent;
+    border: 2px solid var(--text-accent);
+    color: var(--text-accent);
+    padding: 12px 30px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    align-self: center;
+    position: relative;
+    z-index: 10;
+}
+
+.open-btn {
+    border-color: rgba(196, 154, 69, 0.6);
+    /* Golden border */
+    color: var(--page-color);
+    margin-top: auto;
+    /* Push the button to the bottom of the flex container */
+    margin-bottom: 20px;
+    /* Add some space from the bottom edge */
+
+    /* Classy Glassmorphism Effect */
+    background: linear-gradient(135deg, rgba(196, 154, 69, 0.4) 0%, rgba(15, 52, 96, 0.4) 100%);
+    /* Elegant gradient */
+    backdrop-filter: blur(10px);
+    /* Blurs the image behind the button */
+    -webkit-backdrop-filter: blur(10px);
+    /* For Safari support */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    /* Make text readable */
+    letter-spacing: 2px;
+}
+
+button:hover {
+    background-color: var(--text-accent);
+    color: var(--page-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(196, 154, 69, 0.4);
+}
+
+
+.open-btn:hover {
+    background: linear-gradient(135deg, rgba(196, 154, 69, 0.8) 0%, rgba(15, 52, 96, 0.8) 100%);
+    /* More opaque on hover */
+    color: var(--page-color);
+    box-shadow: 0 8px 25px rgba(196, 154, 69, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    border-color: var(--text-accent);
+    transform: translateY(-2px);
+}
+
+/* Book Binding & Spiral */
+.binding-texture {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, transparent 100%);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Spirals */
+.spiral-container {
+    position: absolute;
+    left: -15px;
+    top: 5%;
+    height: 90%;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 10;
+    transform-style: preserve-3d;
+}
+
+.spiral {
+    width: 30px;
+    height: 12px;
+    background: linear-gradient(to bottom, #d4d4d4, #f5f5f5 30%, #a3a3a3 70%, #d4d4d4);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+    transform: rotateX(20deg);
+    position: relative;
+}
+
+/* Holes for pages */
+.holes-container {
+    position: absolute;
+    left: 10px;
+    top: 5%;
+    height: 90%;
+    width: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 5;
+}
+
+.hole {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    .scene {
+        width: 100vw;
+        height: 85vh;
+        max-height: 750px;
+        perspective: 1200px;
+    }
+
+    .book {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .content {
+        padding: 20px 15px 20px 35px;
+    }
+
+    .front .content {
+        padding: 20px 30px 20px 30px;
+    }
+}
