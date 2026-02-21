@@ -368,28 +368,39 @@ button:hover {
 @media (max-width: 768px) {
     .scene {
         width: 100vw;
-        height: 85vh;
-        max-height: 750px;
-        perspective: 1200px;
+        height: 100vh;
+        max-height: none;
+        perspective: 1500px;
     }
 
     .book {
-        width: 90%;
-    }
-
-    h1 {
-        font-size: 2.5rem;
+        width: 92vw;
+        height: 80vh;
+        min-height: 550px;
+        max-height: 750px;
     }
 
     h2 {
-        font-size: 1.8rem;
+        font-size: clamp(1.6rem, 6vw, 2.2rem);
     }
 
     .content {
-        padding: 20px 15px 20px 35px;
+        padding: 40px 20px 30px 40px;
+        justify-content: flex-start;
+        /* Prevents top clipping on mobile */
+        overflow-y: auto;
+        /* Allows scrolling if content is very long */
+    }
+
+    /* Remove scrollbar visually but keep functionality */
+    .content::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
     }
 
     .front .content {
-        padding: 20px 30px 20px 30px;
+        padding: 20px;
+        justify-content: center;
+        /* Keep cover perfectly centered */
     }
 }
