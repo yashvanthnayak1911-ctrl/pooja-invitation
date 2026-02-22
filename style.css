@@ -46,15 +46,39 @@ body {
     /* Animation handled in JS to vary speeds */
 }
 
-@keyframes spin {
+@keyframes float-spin-1 {
+    0% {
+        transform: rotate(0deg) translate(0, 0);
+    }
+
+    33% {
+        transform: rotate(120deg) translate(40vw, -20vh);
+    }
+
+    66% {
+        transform: rotate(240deg) translate(-20vw, 30vh);
+    }
+
     100% {
-        transform: rotate(360deg);
+        transform: rotate(360deg) translate(0, 0);
     }
 }
 
-@keyframes spin-reverse {
+@keyframes float-spin-2 {
+    0% {
+        transform: rotate(0deg) translate(0, 0);
+    }
+
+    33% {
+        transform: rotate(-120deg) translate(-30vw, 40vh);
+    }
+
+    66% {
+        transform: rotate(-240deg) translate(40vw, -30vh);
+    }
+
     100% {
-        transform: rotate(-360deg);
+        transform: rotate(-360deg) translate(0, 0);
     }
 }
 

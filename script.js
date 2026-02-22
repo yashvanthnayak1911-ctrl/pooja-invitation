@@ -84,18 +84,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const size = Math.random() * 30 + 15;
 
             // Randomize rotation speed and direction
-            const spinDuration = Math.random() * 40 + 20; // 20s to 60s
-            const spinDirection = Math.random() > 0.5 ? 'spin' : 'spin-reverse';
+            const spinDuration = Math.random() * 60 + 40; // 40s to 100s for a slow peaceful drift
+            const spinDirection = Math.random() > 0.5 ? 'float-spin-1' : 'float-spin-2';
 
-            // Randomize starting rotation
-            const startRot = Math.random() * 360;
+            // Randomize starting animation delay so they don't all move in sync
+            const delay = Math.random() * -100;
 
             // Apply styles
             flower.style.left = `${posX}vw`;
             flower.style.top = `${posY}vh`;
             flower.style.fontSize = `${size}px`;
-            flower.style.transform = `rotate(${startRot}deg)`;
             flower.style.animation = `${spinDirection} ${spinDuration}s linear infinite`;
+            flower.style.animationDelay = `${delay}s`;
 
             // Subtle random opacity for depth
             flower.style.opacity = (Math.random() * 0.15 + 0.1).toFixed(2);
