@@ -134,12 +134,10 @@ body {
     flex-direction: column;
     justify-content: center;
     position: relative;
-    /* Layering the notebook lines over a beautiful subtle background pattern */
+    /* Layering the notebook lines */
     background-image: url('inner-bg.png');
     background-size: 400px;
     background-position: center;
-    background-blend-mode: overlay;
-    /* Blend them nicely */
 }
 
 .front .content {
