@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: invitation
+    env: static
+    buildCommand: ""
+    staticPublishPath: .

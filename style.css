@@ -398,3 +398,55 @@ button:hover {
         overflow-y: hidden;
     }
 }
+
+/* Custom Content Positioning & Mobile Alignment */
+.inner-content {
+    padding: 25px 20px 20px 45px;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    align-items: flex-end;
+    width: 100%;
+    color: var(--text-main);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.contact-left {
+    flex: 1;
+    min-width: 120px;
+}
+
+.contact-right {
+    flex: 1.5;
+    text-align: right;
+    line-height: 1.4;
+    font-weight: 600;
+    min-width: 160px;
+}
+
+@media (max-width: 768px) {
+    .inner-content {
+        padding: 30px 15px 30px 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-left,
+    .contact-right {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
