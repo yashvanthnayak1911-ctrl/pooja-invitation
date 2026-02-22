@@ -450,3 +450,31 @@ button:hover {
         margin-bottom: 5px;
     }
 }
+
+/* Nav Button Absolute Anchoring */
+.nav-button-container {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 20;
+}
+
+.nav-btn.open-btn {
+    padding: 10px 25px;
+    background-color: var(--text-accent);
+    color: var(--page-color);
+    border: 2px solid var(--text-accent);
+    margin: 0;
+    text-shadow: none;
+    box-shadow: 0 4px 15px rgba(196, 154, 69, 0.4);
+}
+
+@media (max-width: 768px) {
+    .nav-button-container {
+        /* Lift it even higher on mobile to clear safe areas */
+        bottom: 45px;
+    }
+}
