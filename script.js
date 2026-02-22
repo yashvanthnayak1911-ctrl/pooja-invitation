@@ -66,8 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Generate random background flowers
     const bgContainer = document.getElementById('bg-flowers');
     if (bgContainer) {
-        const flowerTypes = ['🌼', '🌻'];
-        const numFlowers = 35; // The "some number" of small emojis
+        const flowerTypes = ['✿', '❀', '❁'];
+        const numFlowers = 40; // The "some number" of small white flowers
 
         for (let i = 0; i < numFlowers; i++) {
             const flower = document.createElement('div');

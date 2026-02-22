@@ -40,9 +40,9 @@ body {
 
 .flower {
     position: absolute;
-    color: var(--text-accent);
+    color: white;
     user-select: none;
-    opacity: 0.15;
+    opacity: 0.2;
     /* Animation handled in JS to vary speeds */
 }
 
