@@ -62,4 +62,45 @@ document.addEventListener('DOMContentLoaded', () => {
             page.style.zIndex = page.dataset.z;
         }, 1200);
     };
+
+    // Generate random background flowers
+    const bgContainer = document.getElementById('bg-flowers');
+    if (bgContainer) {
+        const flowerTypes = ['🌼', '🌻'];
+        const numFlowers = 35; // The "some number" of small emojis
+
+        for (let i = 0; i < numFlowers; i++) {
+            const flower = document.createElement('div');
+            flower.className = 'flower';
+
+            // Randomly select emoji
+            flower.textContent = flowerTypes[Math.floor(Math.random() * flowerTypes.length)];
+
+            // Randomize position (0% to 100% of viewport)
+            const posX = Math.random() * 100;
+            const posY = Math.random() * 100;
+
+            // Randomize size (small to medium, 15px to 45px)
+            const size = Math.random() * 30 + 15;
+
+            // Randomize rotation speed and direction
+            const spinDuration = Math.random() * 40 + 20; // 20s to 60s
+            const spinDirection = Math.random() > 0.5 ? 'spin' : 'spin-reverse';
+
+            // Randomize starting rotation
+            const startRot = Math.random() * 360;
+
+            // Apply styles
+            flower.style.left = `${posX}vw`;
+            flower.style.top = `${posY}vh`;
+            flower.style.fontSize = `${size}px`;
+            flower.style.transform = `rotate(${startRot}deg)`;
+            flower.style.animation = `${spinDirection} ${spinDuration}s linear infinite`;
+
+            // Subtle random opacity for depth
+            flower.style.opacity = (Math.random() * 0.15 + 0.1).toFixed(2);
+
+            bgContainer.appendChild(flower);
+        }
+    }
 });
