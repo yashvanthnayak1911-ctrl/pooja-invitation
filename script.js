@@ -67,14 +67,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const bgContainer = document.getElementById('bg-flowers');
     if (bgContainer) {
         const flowerTypes = ['✿', '❀', '❁'];
+        const brightColors = ['#FFD700', '#FFB6C1', '#FFFFFF', '#FFFACD', '#FF69B4', '#FFF5EE']; // Golds, pinks, bright whites
         const numFlowers = 40; // The "some number" of small white flowers
 
         for (let i = 0; i < numFlowers; i++) {
             const flower = document.createElement('div');
             flower.className = 'flower';
 
-            // Randomly select emoji
+            // Randomly select emoji and color
             flower.textContent = flowerTypes[Math.floor(Math.random() * flowerTypes.length)];
+            flower.style.color = brightColors[Math.floor(Math.random() * brightColors.length)];
 
             // Randomize position (0% to 100% of viewport)
             const posX = Math.random() * 100;
@@ -98,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
             flower.style.animationDelay = `${delay}s`;
 
             // Subtle random opacity for depth
+
             flower.style.opacity = (Math.random() * 0.15 + 0.1).toFixed(2);
 
             bgContainer.appendChild(flower);
