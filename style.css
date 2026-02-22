@@ -26,6 +26,45 @@ body {
     color: var(--text-main);
 }
 
+/* Background Flowers */
+.bg-flowers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.flower {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    color: var(--text-accent);
+}
+
+.flower1 {
+    top: -100px;
+    left: -100px;
+    animation: spin 60s linear infinite;
+}
+
+.flower2 {
+    bottom: -150px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    animation: spin 90s linear infinite reverse;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .scene {
     width: 90vw;
     height: 80vh;
