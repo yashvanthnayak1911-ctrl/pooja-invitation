@@ -80,6 +80,7 @@ body {
 }
 
 .cover-page {
+    z-index: 10;
     box-shadow:
         inset 0 0 20px rgba(0, 0, 0, 0.05),
         0 0 15px rgba(196, 154, 69, 0.6),
@@ -112,7 +113,8 @@ body {
     border-radius: 5px 15px 15px 5px;
     background-color: var(--page-color);
     overflow: hidden;
-    /* Remove translate3d on children, iOS hates nested 3D transforms */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 .front {
