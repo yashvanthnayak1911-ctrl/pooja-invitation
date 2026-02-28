@@ -63,47 +63,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1200);
     };
 
-    // Generate random background flowers
-    const bgContainer = document.getElementById('bg-flowers');
-    if (bgContainer) {
-        const flowerTypes = ['✿', '❀', '❁'];
-        const brightColors = ['#FFD700', '#FFB6C1', '#FFFFFF', '#FFFACD', '#FF69B4', '#FFF5EE']; // Golds, pinks, bright whites
-        const numFlowers = 40; // The "some number" of small white flowers
-
-        for (let i = 0; i < numFlowers; i++) {
-            const flower = document.createElement('div');
-            flower.className = 'flower';
-
-            // Randomly select emoji and color
-            flower.textContent = flowerTypes[Math.floor(Math.random() * flowerTypes.length)];
-            flower.style.color = brightColors[Math.floor(Math.random() * brightColors.length)];
-
-            // Randomize position (0% to 100% of viewport)
-            const posX = Math.random() * 100;
-            const posY = Math.random() * 100;
-
-            // Randomize size (small to medium, 15px to 45px)
-            const size = Math.random() * 30 + 15;
-
-            // Randomize rotation speed and direction
-            const spinDuration = Math.random() * 60 + 40; // 40s to 100s for a slow peaceful drift
-            const spinDirection = Math.random() > 0.5 ? 'float-spin-1' : 'float-spin-2';
-
-            // Randomize starting animation delay so they don't all move in sync
-            const delay = Math.random() * -100;
-
-            // Apply styles
-            flower.style.left = `${posX}vw`;
-            flower.style.top = `${posY}vh`;
-            flower.style.fontSize = `${size}px`;
-            flower.style.animation = `${spinDirection} ${spinDuration}s linear infinite`;
-            flower.style.animationDelay = `${delay}s`;
-
-            // Subtle random opacity for depth
-
-            flower.style.opacity = (Math.random() * 0.15 + 0.1).toFixed(2);
-
-            bgContainer.appendChild(flower);
-        }
-    }
 });
