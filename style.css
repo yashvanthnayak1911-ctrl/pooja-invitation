@@ -1,9 +1,9 @@
 :root {
-    --bg-color: #1a1a2e;
-    --page-color: #f8f5f0;
-    --text-main: #2d3142;
-    --text-accent: #c49a45;
-    --cover-color: #0f3460;
+    --bg-color: #3b0a14;
+    --page-color: #fffbf0;
+    --text-main: #4a1c22;
+    --text-accent: #e5a932;
+    --cover-color: #7b1d28;
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
 }
@@ -16,7 +16,7 @@
 
 body {
     background-color: var(--bg-color);
-    background-image: radial-gradient(circle at center, #16213e 0%, var(--bg-color) 100%);
+    background-image: radial-gradient(circle at center, #7b1d28 0%, var(--bg-color) 100%);
     font-family: var(--font-body);
     height: 100vh;
     display: flex;
@@ -147,7 +147,7 @@ body {
 .orb-2 {
     width: 55vw;
     height: 55vw;
-    background: radial-gradient(circle, rgba(15, 52, 96, 0.4) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(123, 29, 40, 0.6) 0%, transparent 70%);
     bottom: -15vw;
     right: -15vw;
     animation-delay: -5s;
@@ -442,7 +442,7 @@ button {
 }
 
 .open-btn {
-    border-color: rgba(196, 154, 69, 0.6);
+    border-color: rgba(229, 169, 50, 0.8);
     /* Golden border */
     color: var(--page-color);
     margin-top: auto;
@@ -451,16 +451,17 @@ button {
     /* Add some space from the bottom edge */
 
     /* Classy Glassmorphism Effect */
-    background: linear-gradient(135deg, rgba(196, 154, 69, 0.4) 0%, rgba(15, 52, 96, 0.4) 100%);
-    /* Elegant gradient */
+    background: linear-gradient(135deg, rgba(229, 169, 50, 0.6) 0%, rgba(123, 29, 40, 0.8) 100%);
+    /* Elegant vibrant gradient */
     backdrop-filter: blur(10px);
     /* Blurs the image behind the button */
     -webkit-backdrop-filter: blur(10px);
     /* For Safari support */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
     /* Make text readable */
     letter-spacing: 2px;
+    font-weight: 600;
 }
 
 button:hover {
@@ -472,12 +473,12 @@ button:hover {
 
 
 .open-btn:hover {
-    background: linear-gradient(135deg, rgba(196, 154, 69, 0.8) 0%, rgba(15, 52, 96, 0.8) 100%);
-    /* More opaque on hover */
+    background: linear-gradient(135deg, rgba(229, 169, 50, 0.9) 0%, rgba(123, 29, 40, 0.9) 100%);
+    /* More opaque and vibrant on hover */
     color: var(--page-color);
-    box-shadow: 0 8px 25px rgba(196, 154, 69, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 25px rgba(229, 169, 50, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.5);
     border-color: var(--text-accent);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
 
 /* Book Binding & Spiral */
@@ -545,10 +546,10 @@ button:hover {
     }
 
     .book {
-        width: 92vw;
-        height: 80vh;
-        min-height: 550px;
-        max-height: 750px;
+        width: 95vw;
+        height: 85vh;
+        min-height: 600px;
+        max-height: 850px;
     }
 
     h2 {
@@ -556,7 +557,7 @@ button:hover {
     }
 
     .content {
-        padding: 40px 20px 30px 40px;
+        padding: 30px 15px 20px 35px;
         justify-content: flex-start;
         /* Prevents top clipping on mobile */
         overflow-y: auto;
@@ -587,7 +588,6 @@ button:hover {
     justify-content: space-between;
     text-align: left;
     font-size: 0.85rem;
-    margin-bottom: 15px;
     align-items: flex-end;
     width: 100%;
     color: var(--text-main);
@@ -610,7 +610,7 @@ button:hover {
 
 @media (max-width: 768px) {
     .inner-content {
-        padding: 20px 10px 20px 30px;
+        padding: 20px 15px 20px 30px;
     }
 }
 
@@ -623,42 +623,54 @@ button:hover {
         font-size: clamp(1.4rem, 5vw, 1.8rem);
     }
 
+    .book {
+        height: 88vh;
+        min-height: 650px;
+    }
+
     .inner-content {
-        padding: 15px 10px 10px 30px;
+        padding: 25px 10px 20px 25px;
+        gap: 2vh !important;
     }
 
     .contact-section {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
+        gap: 10px;
     }
 
     .contact-left,
     .contact-right {
         text-align: center;
         width: 100%;
-        margin-bottom: 5px;
+        margin-bottom: 0px;
     }
 }
 
 /* Nav Button Anchoring */
 .nav-button-container {
-    margin-top: -10px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
 .nav-btn.open-btn {
-    padding: 7px 18px;
-    background-color: var(--text-accent);
-    color: var(--cover-color);
-    border: 2px solid var(--text-accent);
+    padding: 10px 22px;
+    background: linear-gradient(135deg, var(--text-accent) 0%, #c4801b 100%);
+    color: #fff;
+    border: none;
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 700;
-    text-shadow: none;
-    box-shadow: 0 4px 15px rgba(196, 154, 69, 0.4);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(229, 169, 50, 0.4);
+    border-radius: 25px;
+}
+
+.nav-btn.open-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(229, 169, 50, 0.6);
 }
