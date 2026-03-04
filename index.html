@@ -32,107 +32,57 @@
             <div class="page base-page" id="page2" data-z="2" style="z-index: 2;">
                 <div class="side">
                     <div class="content inner-content page-layout"
-                        style="text-align: center; overflow-y: hidden; overflow-x: hidden; display: flex; flex-direction: column; justify-content: center; gap: 0.6vh; padding: 1vh 0;">
+                        style="text-align: center; overflow-y: hidden; overflow-x: hidden; display: flex; flex-direction: column; justify-content: center; gap: 0.8vh; padding: 2vh 1vh; position: relative;">
+                        <!-- Adding an inline background image matching the styling requested -->
+                        <div
+                            style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:-1; opacity: 0.15; background-image: url('front-image.png'); background-size: cover; background-position: center; border-radius: 5px;">
+                        </div>
+
                         <div class="header-text"
-                            style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(1rem, 3.5vw, 1.25rem); letter-spacing: 1.5px; text-transform: uppercase; line-height: 1.3; background: linear-gradient(90deg, #ff0055, #ff7f00); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0px 2px 4px rgba(0,0,0,0.1); margin-top: -2vh; margin-bottom: 0.5vh;">
-                            Sri Kadari Narsimhaswamy Prasanna
+                            style="font-family: var(--font-heading), serif; font-weight: 700; font-size: clamp(1.2rem, 3.5vw, 1.4rem); color: #8b2b1a; text-shadow: 0px 1px 2px rgba(0,0,0,0.1); margin-top: -1.5vh; margin-bottom: 0.5vh; line-height: 1.3;">
+                            You are cordially<br>invited to join us for<br>Poojas at our Home
                         </div>
-
-                        <div class="names-text"
-                            style="font-weight: 600; font-size: clamp(0.85rem, 3vw, 1rem); line-height: 1.4; color: var(--cover-color);">
-                            Mrs. S.K. Janavi (Manjula) &amp; Mrs. G.R. Suresh Babu
-                        </div>
-
-                        <div class="invite-text"
-                            style="font-family: var(--font-heading); font-size: clamp(0.8rem, 2.8vw, 0.9rem); line-height: 1.4; font-style: italic; color: var(--text-main);">
-                            Cordially invite you to take part in
-                        </div>
-
-                        <div class="pooja-title"
-                            style="font-family: var(--font-heading); font-size: clamp(1.1rem, 4vw, 1.35rem); font-weight: 700; color: var(--cover-color); line-height: 1.3; letter-spacing: 0.5px; margin: 0.2vh 0;">
-                            "Sri Lakshmi Narasimha Swamy<br>Pooja"
-                        </div>
-
-                        <hr
-                            style="border: 0; border-top: 1px solid rgba(196, 154, 69, 0.4); margin: 0.5vh 15%; width: 70%;">
 
                         <div class="date-box"
-                            style="display: flex; justify-content: center; align-items: center; gap: 10px; color: var(--cover-color); margin: 0.8vh 0;">
-                            <div style="font-size: 1.1rem; font-weight: 700; text-transform: uppercase;">March</div>
+                            style="font-family: var(--font-heading), serif; font-size: clamp(1.1rem, 3.5vw, 1.35rem); font-weight: 700; color: #8b2b1a; margin: 1vh 0; letter-spacing: 0.5px; border-top: 1px solid rgba(139, 43, 26, 0.2); border-bottom: 1px solid rgba(139, 43, 26, 0.2); display: inline-block; padding: 5px 15px; align-self: center;">
+                            08 March 2026, Sunday
+                        </div>
+
+                        <div class="events-container"
+                            style="display: flex; flex-direction: column; gap: 1.2vh; align-items: center; width: 100%; margin-top: 0.5vh;">
+                            <div class="event-bubble"
+                                style="background-color: rgba(255, 248, 231, 0.9); border-top: 2px solid #dfa25b; border-bottom: 2px solid #dfa25b; border-radius: 12px; padding: 1vh 2vw; width: 90%; box-shadow: 0 3px 8px rgba(0,0,0,0.06);">
+                                <p class="time"
+                                    style="font-size: clamp(0.95rem, 2.8vw, 1.15rem); margin: 0; color: #b74124; font-weight: 600;">
+                                    Morning 10:00 AM</p>
+                                <h4 class="event-name"
+                                    style="font-size: clamp(1.1rem, 3.2vw, 1.35rem); margin: 2px 0 0 0; color: #8b2b1a; font-weight: 700; font-family: var(--font-heading), serif;">
+                                    Srinivasa Kalyanotsava</h4>
+                            </div>
+
+                            <div class="event-bubble"
+                                style="background-color: rgba(255, 248, 231, 0.9); border-top: 2px solid #dfa25b; border-bottom: 2px solid #dfa25b; border-radius: 12px; padding: 1vh 2vw; width: 90%; box-shadow: 0 3px 8px rgba(0,0,0,0.06);">
+                                <p class="time"
+                                    style="font-size: clamp(0.95rem, 2.8vw, 1.15rem); margin: 0; color: #b74124; font-weight: 600;">
+                                    Evening 6:00 PM</p>
+                                <h4 class="event-name"
+                                    style="font-size: clamp(1.1rem, 3.2vw, 1.35rem); margin: 2px 0 0 0; color: #8b2b1a; font-weight: 700; font-family: var(--font-heading), serif;">
+                                    Satyanarayanaswamy Pooja</h4>
+                            </div>
+                        </div>
+
+                        <div class="invite-section" style="margin-top: 1.5vh;">
                             <div
-                                style="font-size: 2rem; font-weight: 700; color: var(--text-accent); border: 2px solid var(--text-accent); padding: 2px 12px; border-radius: 6px; line-height: 1; box-shadow: 0 4px 10px rgba(196, 154, 69, 0.1); background: rgba(196, 154, 69, 0.05);">
-                                08</div>
-                            <div style="font-size: 1.1rem; font-weight: 700;">2026</div>
-                        </div>
-
-                        <div class="time-text"
-                            style="font-style: italic; font-size: clamp(0.9rem, 3.5vw, 1rem); text-transform: capitalize; line-height: 1.4; color: var(--text-main); font-weight: 500;">
-                            Sunday, 10:00 AM onwards &nbsp;|&nbsp; <span
-                                style="font-weight: 700; color: var(--cover-color);">Lunch: 12:30 PM</span>
-                        </div>
-
-                        <div class="venue-box"
-                            style="border: 1px solid rgba(196, 154, 69, 0.3); padding: 8px 12px; border-radius: 12px; background: rgba(255,255,255,0.4); margin-top: 0.5vh; display: flex; flex-direction: column; gap: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+                                style="font-family: var(--font-heading), serif; font-weight: 700; font-size: clamp(1rem, 3vw, 1.25rem); color: #8b2b1a; margin-bottom: 0.5vh;">
+                                Invited by: SGT Family
+                            </div>
                             <div
-                                style="font-weight: 700; font-size: 1.05rem; color: var(--cover-color); text-align: center; letter-spacing: 0.5px; text-transform: uppercase;">
-                                Venue</div>
-                            <div class="venue-details-container"
-                                style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                                <div style="text-align: center; flex: 1; min-width: 140px;">
-                                    <div
-                                        style="font-size: 0.9rem; line-height: 1.4; color: var(--text-main); font-weight: 500;">
-                                        "Namma Kanasu", No.1515, 7th Block,<br>
-                                        S.M.V. Layout, Near Ullala RTO Office,<br>
-                                        Mallathahalli, Bangalore - 91.
-                                    </div>
-                                </div>
-                                <div
-                                    style="flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 4px;">
-                                    <a href="https://maps.app.goo.gl/AENr8VCK2PSr6i8s7?g_st=ic" target="_blank"
-                                        style="text-decoration: none;">
-                                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=55x55&data=https://maps.app.goo.gl/AENr8VCK2PSr6i8s7?g_st=ic"
-                                            alt="Location QR Code"
-                                            style="width: 55px; height: 55px; border-radius: 6px; border: 2px solid rgba(196, 154, 69, 0.6); padding: 2px; background: white; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-                                    </a>
-                                </div>
-                            </div>
-                            <div style="text-align: center; margin-top: 2px;">
-                                <a href="https://maps.app.goo.gl/AENr8VCK2PSr6i8s7?g_st=ic" target="_blank"
-                                    style="color: var(--page-color); background: var(--text-accent); padding: 6px 15px; border-radius: 20px; text-decoration: none; font-weight: 600; font-style: italic; display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(229, 169, 50, 0.4);">
-                                    <span>📍</span> Tap for directions
-                                </a>
+                                style="font-weight: 600; font-size: clamp(0.85rem, 2.6vw, 1rem); line-height: 1.4; color: #a43419;">
+                                Sri Mathi Lalitha &amp; Sri Ravishankar<br>
+                                Sri Mathi Manjula &amp; Sri Shreyas
                             </div>
                         </div>
 
-                        <div class="contact-section"
-                            style="margin-top: 0.5vh; margin-left: 15px; margin-right: 15px; width: auto; background: rgba(0,0,0,0.02); padding: 6px 10px; border-radius: 8px; border-left: 3px solid var(--cover-color); border-right: 3px solid var(--cover-color);">
-                            <div class="contact-left">
-                                <div
-                                    style="font-weight: 700; color: var(--cover-color); margin-bottom: 2px; font-size: 0.95rem; text-transform: uppercase;">
-                                    Yours</div>
-                                <div
-                                    style="line-height: 1.4; font-weight: 600; font-size: 0.9rem; color: var(--text-main);">
-                                    Smt/Sri. Janavi<br>Suresh Babu / Psi
-                                </div>
-                            </div>
-                            <div class="contact-right">
-                                <div class="phone-numbers"
-                                    style="margin-bottom: 0px; font-weight: 600; display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem;">
-                                    <div><span style="color:var(--text-accent); font-size:0.85rem;"></span> <a
-                                            href="tel:9448048294"
-                                            style="color: var(--cover-color); text-decoration: none;">9448048294</a> |
-                                        <a href="tel:7019312549"
-                                            style="color: var(--cover-color); text-decoration: none;">7019312549</a>
-                                    </div>
-                                    <div><span style="color:var(--text-accent); font-size:0.85rem;"></span> <a
-                                            href="tel:9980929268"
-                                            style="color: var(--cover-color); text-decoration: none;">9980929268</a> |
-                                        <a href="tel:8310757905"
-                                            style="color: var(--cover-color); text-decoration: none;">8310757905</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="nav-button-container" style="margin-top: 1vh; padding-top: 5px;">
                             <button class="open-btn nav-btn"
                                 style="font-size: 0.95rem; font-weight: 600; padding: 8px 25px; border-radius: 25px;"
